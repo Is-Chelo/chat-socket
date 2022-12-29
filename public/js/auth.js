@@ -3,7 +3,7 @@ const miform = document.querySelector('form');
 
 const url = window.location.hostname.includes('localhost')
 	? 'http://localhost:3000/api/auth'
-	: 'https://restserver-curso-fher.herokuapp.com/api/auth';
+	: 'https://chat-socket-production-7f3f.up.railway.app/api/auth';
 
 function handleCredentialResponse(response) {
 	console.log('Encoded JWT ID token: ' + response.credential);
@@ -46,6 +46,7 @@ function signOut() {
 }
 
 miform.addEventListener('submit', (e) => {
+
 	e.preventDefault();
 	const formData = {};
 	for (let el of miform.elements) {
@@ -55,7 +56,6 @@ miform.addEventListener('submit', (e) => {
 	}
 	console.log(formData);
 	fetch(url + '/login', {
-		mode: 'no-cors',
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(formData),

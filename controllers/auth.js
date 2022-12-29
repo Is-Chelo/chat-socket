@@ -7,8 +7,9 @@ const { generarJWT } = require('../helpers/generar-jwt');
 const { googleVerify } = require('../helpers/google-verify');
 
 const login = async (req, res = response) => {
-	const { correo, password } = req.body;
 
+	const { correo, password } = req.body;
+	console.log(correo, password)
 	try {
 		// Verificar si el email existe
 		const usuario = await Usuario.findOne({ correo });

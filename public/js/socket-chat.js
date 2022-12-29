@@ -20,7 +20,6 @@ const validarJWT = async () => {
 		throw new Error('No hay token en el servidor...');
 	}
 	const resp = await fetch(url, {
-		mode: 'no-cors',
 		headers: { 'x-token': token },
 	});
 	const { usuario: userDb, token: tokenDb } = await resp.json();
