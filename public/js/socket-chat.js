@@ -11,7 +11,7 @@ let socket = null;
 
 const url = window.location.hostname.includes('localhost')
 	? 'http://localhost:3000/api/auth'
-	: 'https://restserver-curso-fher.herokuapp.com/api/auth';
+	: 'https://chat-socket-production-7f3f.up.railway.app/api/auth';
 
 const validarJWT = async () => {
 	const token = localStorage.getItem('token') || '';
