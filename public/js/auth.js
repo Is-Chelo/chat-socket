@@ -9,7 +9,7 @@ function handleCredentialResponse(response) {
 	console.log('Encoded JWT ID token: ' + response.credential);
 	const data = { id_token: response.credential };
 	fetch(url + '/google', {
-		mode: 'no-cors',
+		// mode: 'no-cors',
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(data),
